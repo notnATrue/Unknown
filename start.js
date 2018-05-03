@@ -21,9 +21,15 @@ app.post('/register', function(req, res) {
         res.send('wrong password');
     }
 });
+app.get('/hw', function(req, res) {
+    // req.accepts('text/html');
+    // res.location('D:\ShowYourSkill\pages\Homework.html');
+    res.redirect('Homework.html');
+});
+
 
 app.get('/api', function(req, res) {
-
+    
     res.send('api under constrution');
 });
 
@@ -35,3 +41,5 @@ Renders a view and sends the rendered HTML string to the client. Optional parame
 
 locals, an object whose properties define local variables for the view.
 callback, a callback function. If provided, the method returns both the possible error and rendered string, but does not perform an automated response. When an error occurs, the method invokes next(err) internally.*/
+// res.cookie('name', 'tobi', { domain: '.example.com', path: '/admin', secure: true });
+// res.cookie('rememberme', '1', { expires: new Date(Date.now() + 900000), httpOnly: true });
