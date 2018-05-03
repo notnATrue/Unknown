@@ -21,11 +21,26 @@ app.post('/register', function(req, res) {
         res.send('wrong password');
     }
 });
-app.get('/hw', function(req, res) {
+
+app.get('/loggin', function(req, res) {
+    console.log(req)
+    
+    res.redirect('index.html');
+});
+    
+    // var homework = document.querySelector('#homework');
+    // homework.addEventListener('click', function(){
+    //     console.log(homework.attributes);
+    // });
+    // res.redirect('Homework.html');
+    // console.log(req.body);
+
+    
+    
     // req.accepts('text/html');
     // res.location('D:\ShowYourSkill\pages\Homework.html');
-    res.redirect('Homework.html');
-});
+    
+
 
 
 app.get('/api', function(req, res) {

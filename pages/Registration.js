@@ -3,7 +3,11 @@ var loginform = document.getElementById('MyValidateForm');
 var array = Array.from(loginform.elements);
 
 var submit = document.getElementById('submit');
+console.log(submit)
 submit.setAttribute('disabled', 'true');
+
+
+console.log(submit.attributes)
 
 var box = document.getElementById('agree');
 box.addEventListener('change' , function(){
@@ -36,6 +40,7 @@ var forms = {
   }
 };
 
+
 function setdefault(){
   forms.submit.disabled = true;
   forms.box.checked = false;
@@ -47,6 +52,7 @@ function setdefault(){
 var validation = function(e){
 e.preventDefault();
 emptyForms();
+
     
 function emptyForms(){
   forms.defColor();
@@ -81,11 +87,13 @@ function declineLogin(e){
 } 
 function loggedIn(){
   createUser();
+ 
   console.log('Welcome ' + forms.name.value);
 }
 setdefault();
 // random();
 }
+
 submit.addEventListener('click' , validation);
 
 function createUser(){
@@ -93,9 +101,13 @@ function createUser(){
   document.cookie = "token="+forms.pas1.value+'['+forms.pas1.value+']';
   localStorage.setItem('e-mail', encodeURIComponent(forms.name.value));
   localStorage.setItem('pass' , encodeURIComponent(forms.pas1.value));
-  logg(localStorage);
-  logg(document.cookie);
+  console.log("localStorage = " + localStorage.getItem());
+  console.log("documentCookie = " + document.cookie);
+  //
 };
+
+
+
 
 
 // var loginform = document.getElementById('MyValidateForm');
