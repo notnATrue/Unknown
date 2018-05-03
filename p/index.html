@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+<title>
+    
+</title>
+</head>
+<body class="bg-dark">
+ <nav class="navbar navbar-expand-lg navbar-dark " id="navbar" style="background:rgb(42, 47, 51)">
+  <a class="navbar-brand  mr-center h1" href="https:\\gmail.com" style="color:rgb(252, 94, 55)">
+    notnATrue@gmail.com</a>
+     <div class="navbar-nav float-center" style="height:45px; width:200px;">
+      <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+       aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </div>
+        <div class="collapse navbar-collapse h6" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item active ">
+              <a class="nav-link w-25" href="lhost:8080">Home</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link w-25" href="http:\\google.com.ua">Google</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link w-25" href="http:\\youtube.com">Youtube</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link w-25" href="http:\\twitch.com">Twitch</a>
+            </li>
+          </ul>
+          <div class="navbar-nav float-center text-warning" style="height:40px;width:275px"></div>
+          <ul class="navbar-nav float-center">
+            <!-- login registration -->
+            <button id="registration" type="button" class="btn btn-warning position-sticky float-center" data-toggle="modal" data-target=".my-reg-form">Create account</button>
+            <button id="login" type="submit" class="btn btn-primary "  data-toggle="modal" data-target=".bd-example-modal-sm">Sign in</button>
+          </ul>
+        </div>
+ </nav>      
+<div id="login-modal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display:none">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="card border-dark">
+            <div class="card-header">Header</div>
+            <div class="card-body text-dark">
+                <!-- login form -->
+                <form action="register" method="POST">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <input id="login-submit-reg" type="submit" class="btn btn-primary"></button>
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div id="reg-modal" class="modal fade bd-example-modal-sm my-reg-form" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display:true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="card border-dark">
+              <div class="card-header">Header</div>
+              <div class="card-body text-dark" class="float-center">
+                  <!-- regform -->
+                  <form id="MyValidateForm">
+                      <input id="user-name"type="text" name='login' placeholder="Ваш логин" />
+                      <input id="user-pas1"type="password" name='pas1' placeholder="Ваш пароль" />
+                      <input id="user-pas2" type="password" name='pas2' placeholder="Повторите пароль" />
+                      <label for="agree">
+                        <span>Вы согласны с лицензионым соглашением.</span>
+                        <input name="Checkbox" type="checkbox" id="agree"  />
+                      </label>
+                      <button id="submit" type="submit" class="btn btn-primary">Confim</button>
+                      <!-- <input type="submit" id="submit" value="Отправить"/> -->
+                    </form>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- UserPanel -->
+      <div class="card text-white bg-dark mb-3 float-left" style="max-width: 18rem;">
+          <div class="card-header">
+            <h5 id ="user-name-head" style="color:rgb(252, 94, 55)"></h5>
+          </div>
+        <div class="card-body">
+            <div class="list-group">
+                <div class="btn-group-vertical">
+                    <button id="clear-storage" type="button" class="btn btn-outline-primary ">ClearLocStorage</button>
+                  </div>
+            </div>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3 float-right" style="max-width: 18rem;">
+          <div class="card-body">
+            <div class="card-header">
+              </div>
+                <form class="form my-2 my-lg-0">
+                  <input class="form-control float-center mr-sm-3" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success btn-block" type="submit">Search</button>
+                </form>
+          </div>
+      </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous">
+</script>
+
+</body>
+</html>
