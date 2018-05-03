@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/p'));
+app.use(express.static(__dirname + '/pages'));
 
 app.post('/register', function(req, res) {
     console.log(req.body);
@@ -27,7 +27,7 @@ app.get('/api', function(req, res) {
     res.send('api under constrution');
 });
 
-app.get('/p',function(req,res){
+app.get('/pages',function(req,res){
        
     res.sendFile('Homework.html');
 
