@@ -4,8 +4,7 @@ window.addEventListener("load", function () {
   var polandCity = ['Warszawa', 'Poznan', 'Krakow', 'Katowice'];
   var usaCity = ['New York', 'Los Angeles', 'Las Vegas', 'Chicago'];
   var select = document.querySelector('#countries');
-  var option = document.createElement('option');
-  var def = document.createElement('option');
+  //var option = document.createElement('option');
   appearList();
   select.selectedIndex = -1;
 
@@ -24,23 +23,36 @@ window.addEventListener("load", function () {
       select.appendChild(option);
     };
     select.addEventListener('change', function(){
-      city(select.value)
+      var toRemove = document.getElementById('city');
+      
+      var res = document.querySelector('#result');
+      res.removeChild(toRemove);
+    });
+    select.addEventListener('change', function(){
+      
+      city(select.value);
     });
   };     
 });
   
   function city(e){
-    var country = e;
+    var select = document.querySelector('#countries');
     var res = document.querySelector('#result');
+    
+    var country = e;
+    
     var resSelect = document.createElement('select');
-    resSelect.setAttribute('id', 'city')
+    resSelect.setAttribute('id', 'city');
+    resSelect.className = "float-top";
     var option = document.querySelectorAll('option');
     let target = document.getElementById(e);
     let citys = target.classList;
+    
     console.log(target);
     
     console.log(citys)
-    
+    // var resString = document.createElement('div');
+    // res.appendChild(resString)
     for(var i = 0 ; i < citys.length ; i++){
       var resOption = document.createElement('option');
       resOption.innerText = citys[i];
@@ -48,15 +60,21 @@ window.addEventListener("load", function () {
       res.appendChild(resSelect);
       resSelect.selectedIndex = -1;
     };
+    
     resSelect.addEventListener('change' , function(){
       weather(resSelect.value , country);
     });
+    
+    
   }
   function weather(e , c){
     var weatherControl;
+    
     var res = document.querySelector('#result');
+   
     console.log(e);
     var li = document.createElement('li');
+    li.classList = "sticky-top";
     var currentT = randomT(-10 , 40);
     var currentW = randomW(0 , Array.value);
       
