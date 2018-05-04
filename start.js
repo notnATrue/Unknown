@@ -1,3 +1,5 @@
+//import { request } from 'https';
+
 var express = require('express'),
     app = express();
 
@@ -21,8 +23,36 @@ app.post('/register', function(req, res) {
 });
 
 app.get('/loggin', function(req, res) {
-    console.log();
-    res.redirect('index.html');
+    //  request.name = "trusted";
+    var x = {};
+    x.chch = req.headers.cookie;
+    let cook = JSON.stringify(req.headers.cookie);
+    
+    console.log(x.chch);
+    if(req.headers === "trusted") {
+        res.cookie = "AcceptedCookie";
+        
+        res.redirect('index.html');
+    } else {res.redirect('/hw/Homework.html')}
+    
+    // function check(){
+    //     return res.cookie('e-mail');
+    // }
+    
+    // function CreateUser(emailu, passu){
+    //     emailu = this.emailu;
+    //     passu = this.passu;
+    //     return console.log(emailu + " " + passu);
+    // };
+    //  let user = {
+    //      name:"name",
+    //      pas:"pass",
+    //  }
+     //createUser(user);
+    // let loggedUser = new CreateUser();
+
+    // console.log(res.cookie('e-mail', 'pass', { domain: 'http://localhost:8080', path: '/index.html', secure: false }));
+    
     
 });
 
