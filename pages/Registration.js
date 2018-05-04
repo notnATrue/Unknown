@@ -95,14 +95,15 @@ setdefault();
 }
 
 submit.addEventListener('click' , validation);
-
+//+'['+forms.pas1.value+']'
 function createUser(){
-  document.cookie = "username"+forms.name.value+';';
-  document.cookie = "token="+forms.pas1.value+'['+forms.pas1.value+']';
-  localStorage.setItem('e-mail', encodeURIComponent(forms.name.value));
-  localStorage.setItem('pass' , encodeURIComponent(forms.pas1.value));
-  console.log("localStorage = " + localStorage.getItem());
+  document.cookie = "username[cookie] = " + forms.name.value+';';
+  document.cookie = "pass[cookie] = " + forms.pas1.value;
+  localStorage.setItem('e-mail[storage](encodeUriComponent) = ', encodeURIComponent(forms.name.value));
+  localStorage.setItem('pass[storage](encodeUriComponent) = ' , encodeURIComponent(forms.pas1.value));
+  console.log("localStorage = " + localStorage.getItem('email'));
   console.log("documentCookie = " + document.cookie);
+  
   //
 };
 

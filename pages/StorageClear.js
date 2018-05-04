@@ -14,13 +14,8 @@ function clearStorage(){
 
     subbtn.addEventListener('click',
     function reddir(){
-        return location.href='http://localhost:8080';
+        location.href='http://localhost:8080/loggin';
     });
-
-    
-    
- 
-
 // homework.addEventListener('click', function(){
 //     var x = homework.getAttribute('class');
 //     if(x.className === 'clicked'){
@@ -32,6 +27,12 @@ var homework = document.querySelector('#homework');
     homework.addEventListener('click', function(){
         location.href = 'http://localhost:8080/hw/Homework.html';
         console.log(homework.attributes);
+    });
+
+    var loggintest = document.querySelector('#test');
+    loggintest.addEventListener('click', function(){
+    location.href = 'http://localhost:8080/loggin';
+    console.log(loggintest.attributes);
     });
     
 
