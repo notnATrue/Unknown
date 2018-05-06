@@ -94,7 +94,7 @@ setdefault();
 // random();
 }
 
-submit.addEventListener('click' , validation);
+//submit.addEventListener('click' , validation);
 //+'['+forms.pas1.value+']'
 function createUser(){
   document.cookie = "username[cookie] = " + forms.name.value+';';
@@ -102,7 +102,7 @@ function createUser(){
   localStorage.setItem('e-mail[storage](encodeUriComponent) = ', encodeURIComponent(forms.name.value));
   localStorage.setItem('pass[storage](encodeUriComponent) = ' , encodeURIComponent(forms.pas1.value));
   //document.cookie = "trusted";
-  
+  //location.href = "http://localhost:8080/hw/Homework.html"
   //
 };
 

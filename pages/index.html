@@ -59,7 +59,7 @@
             <div class="card-header">Header</div>
             <div class="card-body text-dark">
                 <!-- login form -->
-                <form action="register" method="POST">
+                <form action="loggin" method="POST">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email address</label>
                       <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -87,16 +87,16 @@
               <div class="card-header">Header</div>
               <div class="card-body text-dark" class="float-center">
                   <!-- regform -->
-                  <form id="MyValidateForm" action="log" method="POST">
-                      <input id="user-name"type="text" name='login' placeholder="Ваш логин" />
-                      <input id="user-pas1"type="password" name='pas1' placeholder="Ваш пароль" />
-                      <input id="user-pas2" type="password" name='pas2' placeholder="Повторите пароль" />
+                  <form id="MyValidateForm" action="reg" method="POST">
+                      <input id="user-name" type="email" name='login' placeholder="Ваш логин" class="form-control" />
+                      <input id="user-pas1"type="password" name='password' placeholder="Ваш пароль" class="form-control" />
+                      <input id="user-pas2" type="password" name='password2' placeholder="Повторите пароль" class="form-control" />
                       <label for="agree">
                         <span>Вы согласны с лицензионым соглашением.</span>
                         <input name="Checkbox" type="checkbox" id="agree"  />
                       </label>
-                      <input id="submit" type="submit" class=
-                      "btn btn-primary"></input>
+                      <input type="submit" id="submit" class=
+                      "btn btn-primary" ></input>
                       <!-- <input type="submit" id="submit" value="Отправить"/> -->
                     </form>
                   </div>
@@ -117,8 +117,7 @@
                     
                     <button id="clear-storage" type="button" class=
                     "btn btn-outline-secondary" style="color:black">ClearLocStorage</button>
-                    <button src="http://localhost:8080/hw/Homework.html" id="homework" type=
-                    "button" class=
+                    <button id="homework" type="button" class=
                     "btn btn-outline-secondary" style=
                     "color:#f50">Homework</button>
                     

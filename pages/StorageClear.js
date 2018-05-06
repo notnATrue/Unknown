@@ -10,18 +10,13 @@ function clearStorage(){
 
 
 
-    var subbtn = document.querySelector("#submit");
+    // var subbtn = document.querySelector("#submit");
 
-    subbtn.addEventListener('click',
-    function reddir(){
-        location.href='http://localhost:8080/loggin';
-    });
-// homework.addEventListener('click', function(){
-//     var x = homework.getAttribute('class');
-//     if(x.className === 'clicked'){
+    // subbtn.addEventListener('click',
+    // function reddir(){
+    //     location.href='http://localhost:8080/loggin';
+    // });
 
-//     }
-// })
 
 var homework = document.querySelector('#homework');
     homework.addEventListener('click', function(){
@@ -29,11 +24,14 @@ var homework = document.querySelector('#homework');
         console.log(homework.attributes);
     });
 
-    var loggintest = document.querySelector('#test');
-    loggintest.addEventListener('click', function(){
-    location.href = 'http://localhost:8080/loggin';
-    console.log(loggintest.attributes);
-    });
+    // function runReg(){
+    // var loggintest = document.querySelector('#test');
+    // loggintest.addEventListener('click', function(){
+    // location.href = 'http://localhost:8080/reg';
+    // console.log(loggintest.attributes);
+    // });
+    // }
+    
     
 
 
