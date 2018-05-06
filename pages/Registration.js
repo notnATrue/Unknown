@@ -86,27 +86,44 @@ function declineLogin(e){
   console.error(e);
 } 
 function loggedIn(){
-  createUser();
+
+  // function setAction(){
+  //   let form = document.getElementById('MyValidateForm');
+  //   form.setAttribute('action','/reg');
+  //   form.setAttribute('method', 'POST');
+  // }
+  // setAction();
+ // createUser();
  
   console.log('Welcome ' + forms.name.value);
 }
 setdefault();
-// random();
 }
 
-//submit.addEventListener('click' , validation);
-//+'['+forms.pas1.value+']'
+
 function createUser(){
   document.cookie = "username[cookie] = " + forms.name.value+';';
   document.cookie = "pass[cookie] = " + forms.pas1.value;
   localStorage.setItem('e-mail[storage](encodeUriComponent) = ', encodeURIComponent(forms.name.value));
   localStorage.setItem('pass[storage](encodeUriComponent) = ' , encodeURIComponent(forms.pas1.value));
-  //document.cookie = "trusted";
-  //location.href = "http://localhost:8080/hw/Homework.html"
-  //
+  
 };
 
 
+
+
+
+
+
+
+
+
+
+//  submit.addEventListener('click' , validation);
+//+'['+forms.pas1.value+']'
+//document.cookie = "trusted";
+  //location.href = "http://localhost:8080/hw/Homework.html"
+  //
 
 
 

@@ -22,13 +22,13 @@ window.addEventListener("load", function () {
       option.innerText = countries[i];
       select.appendChild(option);
     };
-    select.addEventListener('change', function(){
+    select.addEventListener('change', function() {
       var toRemove = document.getElementById('city');
       
       var res = document.querySelector('#result');
       res.removeChild(toRemove);
     });
-    select.addEventListener('change', function(){
+    select.addEventListener('change', function() {
       
       city(select.value);
     });
@@ -44,16 +44,16 @@ window.addEventListener("load", function () {
     var resSelect = document.createElement('select');
     resSelect.setAttribute('id', 'city');
     resSelect.className = "float-top";
+
     var option = document.querySelectorAll('option');
     let target = document.getElementById(e);
     let citys = target.classList;
     
     console.log(target);
-    
-    console.log(citys)
+    console.log(citys);
     // var resString = document.createElement('div');
     // res.appendChild(resString)
-    for(var i = 0 ; i < citys.length ; i++){
+    for(var i = 0 ; i < citys.length ; i++) {
       var resOption = document.createElement('option');
       resOption.innerText = citys[i];
       resSelect.appendChild(resOption);
@@ -61,17 +61,15 @@ window.addEventListener("load", function () {
       resSelect.selectedIndex = -1;
     };
     
-    resSelect.addEventListener('change' , function(){
+    resSelect.addEventListener('change' , function() {
       weather(resSelect.value , country);
-    });
-    
-    
-  }
+    }); 
+  };
   function weather(e , c){
     var weatherControl;
     
     var res = document.querySelector('#result');
-   
+    
     console.log(e);
     var li = document.createElement('li');
     li.classList = "sticky-top";
@@ -90,9 +88,9 @@ window.addEventListener("load", function () {
         var w = randomW(0 , overHotW.length-1)
         li.innerText = c + " " + e + " +" + currentT + " " + overHotW[w];
       }
-    console.log(w)
+    console.log(w);
     res.appendChild(li);
-  }
+  };
     
   var coldW = ['Солнечно', 'Легкий снегопад', 'Сильный снегопад'];
   var hotW = ['Солнечно', 'Дождь', 'Ветер', 'Сильный дождь'];
@@ -100,11 +98,11 @@ window.addEventListener("load", function () {
 
   function randomT(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
-  }
+  };
     
   function randomW(min,max) {
       return Math.floor(Math.random()*(max-min+1)+min);
-  }
+  };
 
   /*
     Задание:

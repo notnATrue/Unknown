@@ -15,32 +15,51 @@ app.use(bodyParser.json());
 
 
 app.get('/', function (req, res) {
-    console.log(req.cookies["type"]);
-
+    var exCookie = JSON.stringify(req.cookies);
+    console.log(JSON.parse(exCookie))
+    console.log('req-cookies - ' + JSON.stringify(req.cookies))
+    if(exCookie === JSON.stringify(req.cookies)){
+        console.log('success');
+    } else {console.log('fail')}
+    //console.log('res-cookies - ' + res.clearCookie('type'))
+ // console.log("regular:" + req.headers.cookie.split("/\[\w+\]/g"));
+    //res.setHeader('Set-Cookie', ['type=unlogged', 'connection=semi-inkognito']);
     res.sendFile(__dirname + '/pages/index.html');
+    // console.log(res.cookie)
 });
 
 app.use(express.static(__dirname + '/pages'));
+
+
 app.post('/loggin', function (req, res) {
 
     if (req.body.password === '1234') {
         res.setHeader('Set-Cookie', ['type=ninja', 'connection=trusted']);
+        
         res.send('cookie under constrution');
 
     } else {
+        res.setHeader('Set-Cookie', ['type=denied', 'connection=any'])
         res.sendStatus(404);
     }
 });
+// app.get('/loggin', function (req, res) {
+   
+//    res.send(res.header + res.sendStatus(404));
+// });
 
 app.post('/reg', function(req, res) {
-    let user = req.body;
-    res.setHeader('Set-Cookie', ['type=ninja', 'connection=trusted']);
-    console.log(req.body.password);
+   
+    console.log("user-thisCookie = " + res.cookie);
+    //console.log(req.body.password);
 
-    if(req.body.password === '1234') {
-
+    if(req.body.password === '1234' && req.body.password2 === req.body.password) {
+        res.setHeader('Set-Cookie', ['type=ninja', 'connection=trusted']);
         res.send('registration under constraction');
-    } else {res.sendStatus(404)}
+        
+    } else {
+        res.clearCookie('type')
+        res.sendStatus(404)}
 
 });
 
@@ -52,7 +71,7 @@ app.get('/api', function(req, res) {
 
 });
 
-app.listen(8080);
+app.listen(3000);
 
 
 
