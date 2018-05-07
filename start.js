@@ -1,10 +1,11 @@
 //import { request } from 'https';
-
 var express = require('express'),
     app = express();
 
 const bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
+var http = require('http');
+
 
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({
@@ -15,20 +16,31 @@ app.use(bodyParser.json());
 
 
 app.get('/', function (req, res) {
-    var exCookie = JSON.stringify(req.cookies);
-    console.log(JSON.parse(exCookie))
-    console.log('req-cookies - ' + JSON.stringify(req.cookies))
-    if(exCookie === JSON.stringify(req.cookies)){
-        console.log('success');
-    } else {console.log('fail')}
-    //console.log('res-cookies - ' + res.clearCookie('type'))
+        
+        if(req.cookies.type === "ninja" && req.cookies.connection === "trusted"){
+            console.log('lol')
+        } else {console.log('poh')};
+        res.sendFile(__dirname + '/pages/index.html');
+        
+    //     xhttp.open('POST', 'http:/localhost:3000/reg',false)
+        
+    //     document.getElementById("carouselExampleIndicators").setAttribute("type", "display:block");
+    // } else {this.response.href = "http:/localhost:3000/reg"}
+
+});
+  // res.setHeader('Set-Cookie',['type=unkwnow', 'connection=unknown'])
+  //console.log('req-cookies - ' + JSON.stringify(req.cookies))
+//   console.log('res-cookies - ' + res.clearCookie('token'))
+
+
+
  // console.log("regular:" + req.headers.cookie.split("/\[\w+\]/g"));
     //res.setHeader('Set-Cookie', ['type=unlogged', 'connection=semi-inkognito']);
-    res.sendFile(__dirname + '/pages/index.html');
+    
     // console.log(res.cookie)
-});
 
 app.use(express.static(__dirname + '/pages'));
+
 
 
 app.post('/loggin', function (req, res) {
@@ -47,9 +59,16 @@ app.post('/loggin', function (req, res) {
    
 //    res.send(res.header + res.sendStatus(404));
 // });
-
+app.get('/reg', function(req, res){
+    if(req.cookies !== "connection=trusted; type=ninja"){
+        
+        res.redirect('/index.html')
+    } else {res.sendStatus(404);}
+    
+});
 app.post('/reg', function(req, res) {
-   
+    req.clearCookie
+    console.log(req.cookies)
     console.log("user-thisCookie = " + res.cookie);
     //console.log(req.body.password);
 
@@ -58,7 +77,7 @@ app.post('/reg', function(req, res) {
         res.send('registration under constraction');
         
     } else {
-        res.clearCookie('type')
+        
         res.sendStatus(404)}
 
 });
@@ -71,8 +90,12 @@ app.get('/api', function(req, res) {
 
 });
 
-app.listen(3000);
 
+
+app.listen(3000);
+http.createServer(function(req, res){
+    
+}).listen(80, '192.168.0.102');
 
 
 

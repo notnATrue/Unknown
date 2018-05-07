@@ -4,6 +4,9 @@ body{
   background: #eee;
   font-family: sans-serif;
 }
+#border{
+  
+}
 
 .wrap{
   margin: 10px 20px;
@@ -24,9 +27,9 @@ body{
   background: red;
   border-radius: 5px;
 }
-.eventButton{
+/* .eventButton{
 
-}
+} */
 .eventButton.unactive{
   background: #eee;
   color: #a8a8a8;

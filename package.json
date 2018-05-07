@@ -12,7 +12,11 @@
     "bootstrap": "^4.1.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
+    "heroku": "^7.0.26",
     "nodemon": "^1.17.3",
     "x64": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
   }
 }

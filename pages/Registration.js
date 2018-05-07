@@ -3,11 +3,7 @@ var loginform = document.getElementById('MyValidateForm');
 var array = Array.from(loginform.elements);
 
 var submit = document.getElementById('submit');
-console.log(submit)
 submit.setAttribute('disabled', 'true');
-
-
-console.log(submit.attributes)
 
 var box = document.getElementById('agree');
 box.addEventListener('change' , function(){
@@ -102,8 +98,8 @@ setdefault();
 
 
 function createUser(){
-  document.cookie = "username[cookie] = " + forms.name.value+';';
-  document.cookie = "pass[cookie] = " + forms.pas1.value;
+  // document.cookie = "username[cookie] = " + forms.name.value+';';
+  // document.cookie = "pass[cookie] = " + forms.pas1.value;
   localStorage.setItem('e-mail[storage](encodeUriComponent) = ', encodeURIComponent(forms.name.value));
   localStorage.setItem('pass[storage](encodeUriComponent) = ' , encodeURIComponent(forms.pas1.value));
   

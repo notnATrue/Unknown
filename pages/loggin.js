@@ -15,10 +15,7 @@ function userProperty() {
         // userAvatar.appendChild(imgloc);
     } 
 };
-function cookie(){
-    console.log("localStorage = " + localStorage.getItem('e-mail'));
-    console.log("documentCookie = " + document.cookie);
-};
+
     
 // var img = new Image();
     // let userAvatar = document.getElementById('avatar-div');
