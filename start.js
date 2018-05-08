@@ -4,7 +4,7 @@ var express = require('express'),
 
 const bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
-var http = require('http');
+
 
 
 app.use(cookieParser())
@@ -93,9 +93,7 @@ app.get('/api', function(req, res) {
 
 
 app.listen(3000);
-http.createServer(function(req, res){
-    
-}).listen(80, '192.168.0.102');
+
 
 
 

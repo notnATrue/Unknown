@@ -1,4 +1,4 @@
 window.onload = function() { 
-    CookieFabric(localStorage)
+    CookieFabric
     userProperty();
 };

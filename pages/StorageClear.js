@@ -17,7 +17,7 @@ var homework = document.querySelector('#homework');
 
 
     
-    let CookieFabric = function(){
+    let CookieFabric = function(callback){
         var obj = {};
         var Coookies = document.cookie.split('; ');
            Coookies.forEach(function(item) {
@@ -25,9 +25,11 @@ var homework = document.querySelector('#homework');
                var y = item.split('=')[1];
                obj[x] = y;
            });
-        return console.log(obj);
+           callback(obj);
+          //console.log(obj);
        };
 
+       CookieFabric(function(cookie) { console.log(cookie); });
 // var CookieFabric = {
 //      getCookie: function(){
 //         var obj = {};
