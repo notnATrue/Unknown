@@ -1,4 +1,7 @@
 window.onload = function() { 
-    CookieFabric
+    CookieFabric;
     userProperty();
 };
+
+
+logg = (e) => {this.e = e;console.log(e)};

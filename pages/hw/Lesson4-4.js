@@ -47,15 +47,15 @@ window.addEventListener("load", function () {
 
     var option = document.querySelectorAll('option');
     let target = document.getElementById(e);
-    let citys = target.classList;
+    let cities = target.classList;
     
     console.log(target);
-    console.log(citys);
+    console.log(cities);
     // var resString = document.createElement('div');
     // res.appendChild(resString)
     for(var i = 0 ; i < citys.length ; i++) {
       var resOption = document.createElement('option');
-      resOption.innerText = citys[i];
+      resOption.innerText = cities[i];
       resSelect.appendChild(resOption);
       res.appendChild(resSelect);
       resSelect.selectedIndex = -1;
@@ -65,7 +65,7 @@ window.addEventListener("load", function () {
       weather(resSelect.value , country);
     }); 
   };
-  function weather(e , c){
+  function weather(e , c) {
     var weatherControl;
     
     var res = document.querySelector('#result');
@@ -103,23 +103,3 @@ window.addEventListener("load", function () {
   function randomW(min,max) {
       return Math.floor(Math.random()*(max-min+1)+min);
   };
-
-  /*
-    Задание:
-
-    1. Сгенерировать список стран в Select countries
-    2. При выборе страны генерировать еще один Select со списком
-      городов этой страны и вывести этот селект в блок result
-    3. При выборе города нужно случайно рандомить температуру от
-    -10 градусов до +40. Если температура
-
-      -10 до 0 то 'Солнечно' 'Легкий снегопад' 'Сильный снегопад'
-      0 до 30 то  'Солнечно' 'Дождь' 'Ветер' 'Сильный дождь'
-      30 до 40 то 'Солнечно' 'Засуха' 'Ветер'
-
-    4. Вывести сообщение на страничку
-      {Country}. В {City} {Weather} {Temperature} градусов.
-      Ukraine. В Kyiv Солнечно -10 градусов
-
-      + бонус добавить красивые картинки с погодой
-  */

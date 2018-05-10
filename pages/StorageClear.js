@@ -1,35 +1,59 @@
+//import { request } from "http";
 
+//import { request } from "https";
+
+let CookieFabric = function(callback){
+    var obj = {};
+    var Coookies = document.cookie.split('; ');
+        Coookies.forEach(function(item) {
+            var x = item.split('=')[0];
+            var y = item.split('=')[1];
+            obj[x] = y;
+        });
+        callback(obj);
+          };
+CookieFabric(function(cookie) { console.log(cookie); });
 
 let clearBtn = document.querySelector('#clear-storage');
-clearBtn.addEventListener('click',function (){
+    clearBtn.addEventListener('click',function (){
     storageIndex = 0;
     localStorage.clear();
     console.log(localStorage.length);
 });
 
-;
 
-var homework = document.querySelector('#homework');
-    homework.addEventListener('click', function(){
-        location.href = 'http://localhost:3000/hw/Homework.html';
-        console.log(homework.attributes);
-    });
+var btn = document.querySelector('#homework');
+    btn.addEventListener('click', 
+    fetch('hw/task4.js')
+    .then (function(response){
+        if(response.ok === true){
+            return response.json()}
+    }));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var myreq = new request('http://localhost:3000/hw/index.html');
+
+// var homework = document.querySelector('#homework');
+//     homework.addEventListener('click', function(){
+//         location.href = 'http://localhost:3000/hw/index.html';
+//         console.log(homework.attributes);
+//     });
 
     
-    let CookieFabric = function(callback){
-        var obj = {};
-        var Coookies = document.cookie.split('; ');
-           Coookies.forEach(function(item) {
-               var x = item.split('=')[0];
-               var y = item.split('=')[1];
-               obj[x] = y;
-           });
-           callback(obj);
-          //console.log(obj);
-       };
 
-       CookieFabric(function(cookie) { console.log(cookie); });
 // var CookieFabric = {
 //      getCookie: function(){
 //         var obj = {};

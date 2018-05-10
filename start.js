@@ -5,92 +5,62 @@ var express = require('express'),
 const bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
 
-
-
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
 app.use(bodyParser.json());
 
-
 app.get('/', function (req, res) {
-        
-        if(req.cookies.type === "ninja" && req.cookies.connection === "trusted"){
-            console.log('lol')
-        } else {console.log('poh')};
-        res.sendFile(__dirname + '/pages/index.html');
-        
-    //     xhttp.open('POST', 'http:/localhost:3000/reg',false)
-        
-    //     document.getElementById("carouselExampleIndicators").setAttribute("type", "display:block");
-    // } else {this.response.href = "http:/localhost:3000/reg"}
-
+    // if (req.cookies.type === "ninja" && req.cookies.connection === "trusted"){
+    res.sendFile(__dirname + '/pages/index.html');
+    console.log(req.cookies);
 });
-  // res.setHeader('Set-Cookie',['type=unkwnow', 'connection=unknown'])
-  //console.log('req-cookies - ' + JSON.stringify(req.cookies))
-//   console.log('res-cookies - ' + res.clearCookie('token'))
-
-
-
- // console.log("regular:" + req.headers.cookie.split("/\[\w+\]/g"));
-    //res.setHeader('Set-Cookie', ['type=unlogged', 'connection=semi-inkognito']);
-    
-    // console.log(res.cookie)
 
 app.use(express.static(__dirname + '/pages'));
 
 
-
-app.post('/loggin', function (req, res) {
-
+app.post('/log', function (req, res) {
     if (req.body.password === '1234') {
         res.setHeader('Set-Cookie', ['type=ninja', 'connection=trusted']);
-        
         res.send('cookie under constrution');
-
     } else {
-        res.setHeader('Set-Cookie', ['type=denied', 'connection=any'])
-        res.sendStatus(404);
-    }
+        res.send('Secure url detected xD');
+    };
 });
-// app.get('/loggin', function (req, res) {
-   
-//    res.send(res.header + res.sendStatus(404));
-// });
-app.get('/reg', function(req, res){
-    if(req.cookies !== "connection=trusted; type=ninja"){
-        
-        res.redirect('/index.html')
-    } else {res.sendStatus(404);}
-    
-});
-app.post('/reg', function(req, res) {
-    req.clearCookie
-    console.log(req.cookies)
-    console.log("user-thisCookie = " + res.cookie);
-    //console.log(req.body.password);
 
-    if(req.body.password === '1234' && req.body.password2 === req.body.password) {
+app.post('/reg', function(req, res) {
+    console.log(req.cookies);
+    if (req.body.password === '1234' && req.body.password2 === req.body.password) {
         res.setHeader('Set-Cookie', ['type=ninja', 'connection=trusted']);
         res.send('registration under constraction');
-        
     } else {
-        
-        res.sendStatus(404)}
-
+        res.sendStatus(200)}
 });
 
 
+app.get('/log', function(req, res) {
+    console.log(req.cookies);
+    res.redirect('index.html');
+});
+app.get('/reg', function(req, res) {
+    if(req.cookies !== "connection=trusted; type=ninja"){
+        res.redirect('/index.html');
+    } else {res.sendStatus(404);}
+});
 
 app.get('/api', function(req, res) {
 
-    res.send('api under constrution')
-
+    res.send('api under constrution');
 });
 
-
+app.get('/hw/index.html', function(req, res){
+    if(req.statusCode() === 200){
+        Promise
+    }
+    res.redirect('/hw/index.html');
+})
 
 app.listen(3000);
 
@@ -99,6 +69,28 @@ app.listen(3000);
 
 
 
+// app.get('/loggin', function (req, res) {
+//    res.send(res.header + res.sendStatus(404));
+// });
+//console.log("user-thisCookie = " + res.cookie);
+    //console.log(req.body.password);
+
+//         xhttp.open('POST', 'http:/localhost:3000/reg',false)
+        
+//         document.getElementById("carouselExampleIndicators").setAttribute("type", "display:block");
+//     } else {this.response.href = "http:/localhost:3000/reg"}
+
+
+//   res.setHeader('Set-Cookie',['type=unkwnow', 'connection=unknown'])
+//   console.log('req-cookies - ' + JSON.stringify(req.cookies))
+//   console.log('res-cookies - ' + res.clearCookie('token'))
+
+
+
+//  console.log("regular:" + req.headers.cookie.split("/\[\w+\]/g"));
+//     res.setHeader('Set-Cookie', ['type=unlogged', 'connection=semi-inkognito']);
+    
+//     console.log(res.cookie)
 
 
 
