@@ -22,16 +22,26 @@ let clearBtn = document.querySelector('#clear-storage');
 });
 
 
-var btn = document.querySelector('#homework');
-    btn.addEventListener('click', 
-    fetch('hw/task4.js')
-    .then (function(response){
-        if(response.ok === true){
-            return response.json()}
-    }));
+// var btn = document.querySelector('#homework');
+//     btn.addEventListener('click', 
+//     fetch('hw/task4.js')
+//     .then (function(response) {
+//         if(response.ok === true){
+//             throw Error(responce.statusText)
+//            }
+//         }));
 
 
+// function loadImg(e) {
+//     document.body.appendChild(e);
+//    x();
+//    var x = (e) => {
+//        this.e = e;
+//        return e;
+//        };
+//    document.body.appendChild(x);
 
+// };
 
 
 

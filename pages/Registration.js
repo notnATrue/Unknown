@@ -12,10 +12,9 @@ box.addEventListener('change' ,
   submit.disabled = false;
   };
 });
-var inputs = Array.from(loginform.elements);
-logg(inputs);
-logg = (e) => {this.e = e;
-              console.log(e)}; 
+// var inputs = Array.from(loginform.elements);
+// logg(inputs);
+// logg = (e) => {this.e = e; console.log(e)}; 
 
 //let promise = fetch('/reg');
 
