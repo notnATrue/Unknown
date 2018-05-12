@@ -20,9 +20,8 @@ app.get('/', function (req, res) {
 
 app.use(express.static(__dirname + '/pages'));
 
-
 app.post('/log', function (req, res) {
-    if (req.body.password === '1234') {
+    if (req.body.password === '1234' && req.body.email === 'Owner') {
         res.setHeader('Set-Cookie', ['type=ninja', 'connection=trusted']);
         res.send('cookie under constrution');
     } else {
@@ -51,16 +50,12 @@ app.get('/reg', function(req, res) {
 });
 
 app.get('/api', function(req, res) {
-
     res.send('api under constrution');
 });
 
-app.get('/hw/index.html', function(req, res){
-    if(req.statusCode() === 200){
-        Promise
-    }
-    res.redirect('/hw/index.html');
-})
+// app.get('/tools', function(req, res){
+//     res.redirect('tools.html');
+// });
 
 app.listen(3000);
 

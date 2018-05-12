@@ -1,13 +1,14 @@
-
 window.onload = function() { 
     CookieFabric;
     userProperty();
-    loadImg();
-    function loadImg() {
-        var img = document.createElement('img');
-        img = document.createElement('img');
-        img.src='file:///D:/ShowYourSkill/pages/images/mainSwitch.jpg';
-        document.body.appendChild(img);
+    Encrypt();
+    function Encrypt(){
+        var but = document.querySelector('#SecondPage');
+        but.addEventListener('click', 
+        function(){
+            location.href = 'http://localhost:3000/tools.html';
+        }); 
     };
 };
+
 

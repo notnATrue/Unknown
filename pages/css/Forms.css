@@ -18,3 +18,9 @@
     .OK{
         border: 1px solid green;
     }
+    #navbar{
+        border-radius: 5px;
+    }
+    /* #img{
+        max-width: 300px;
+    } */

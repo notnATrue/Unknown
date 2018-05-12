@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <title>
-
       </title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
@@ -11,71 +10,82 @@
     integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   
 </head>
-<body style="background-color:rgb(42, 47, 51)">
-
- <nav class="navbar navbar-expand-lg navbar-dark " id="navbar" style="background:rgb(50, 54, 58);">
-  <a class="navbar-brand  mr-center h1" href="https:\\gmail.com" style=
-  "color:#f50">
-    notnATrue@gmail.com</a>
-     <div class="navbar-nav float-center" style="height:45px; width:200px;">
-      <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-       aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </div>
-        <div class="collapse navbar-collapse h6" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item active ">
-              <a class="nav-link w-25" href="lhost:8080">Home</a>
-            </li>
-            <li class="nav-item">
-             <a class="nav-link w-25" href="http:\\google.com.ua">Google</a>
-            </li>
-            <li class="nav-item">
-             <a class="nav-link w-25" href="http:\\youtube.com">Youtube</a>
-            </li>
-            <li class="nav-item">
-             <a class="nav-link w-25" href="https://api.privatbank.ua/">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link w-25" href="https://deezer.com">Deezer</a>
-             </li>
-          </ul>
-          <div class="navbar-nav float-center text-warning" style=
-          "height:40px;width:275px"></div>
-          <ul class="navbar-nav float-center">
-          <!-- login registration -->
-          <button id="registration" type="submit" class=
-          "btn btn-warning position-sticky float-center" data-toggle="modal" data-target=
-          ".my-reg-form">Create account</button>
-          <button id="login" type="submit" class=
-          "btn btn-primary "  data-toggle="modal" data-target=".bd-example-modal-sm">Sign in</button>
-          </ul>
-        </div>
-</nav> 
-   
-<div id="login-modal" class="modal fade bd-example-modal-sm" tabindex=
-"-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style=
-"display:none">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="card border-dark">
-            <div class="card-header">Header</div>
+<body style="background-color:rgb(0, 0, 0)">
+    <nav class="navbar navbar-expand-lg navbar-dark " id="navbar" style="background:rgb(79, 85, 90);">
+        <a class="navbar-brand  mr-center h1" href="https:\\gmail.com" style=
+        "color:rgb(255, 0, 0); width:300px">
+          HydroGash inc.</a>
+           <div class="navbar-nav float-center" style="height:45px; width:200px;">
+            <button class="navbar-toggler float-right" type=
+            "button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+             aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </div>
+              <div class="collapse navbar-collapse h6" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <li class="nav-item active ">
+                    <a class="nav-link w-25" href="http://localhost:3000/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                   <a class="nav-link w-25" href="http:\\google.com.ua">Google</a>
+                  </li>
+                  <li class="nav-item">
+                   <a class="nav-link w-25" href="http:\\youtube.com">Youtube</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link w-25" href="https://deezer.com">Deezer</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link w-25" href="http://localhost:3000/api">About</a>
+                   </li>
+                </ul>
+              <div class="navbar-nav float-center text-warning" style="height:40px;width:275px"></div>
+              <ul class="navbar-nav float-center">
+                  <!--login registration -->
+              <button id="registration" type="submit" class=
+                "btn btn-outline-success position-sticky float-center" data-toggle="modal" data-target=
+                ".my-reg-form">Create account</button>
+                <button id="login" type="submit" class=
+                "btn btn-primary "  data-toggle="modal" data-target=".bd-example-modal-sm">Sign in</button>
+                </ul>
+              </div>
+        </nav>
+  <div class="container">
+            <!-- <img class="d-block w-100" src="images/GitImage.jpg">  </img>   -->
+    <div class="list-group">
+      <div class="btn-group-vertical">
+        <button action="tools" method="GET" id="SecondPage" type="button" class=
+          "btn btn-outline-dark" style=
+          "color:#f50">Tools</button>
+          <button  id="clear-storage" type="button" class=
+          "btn btn-outline-dark" style=
+          "color:#f50">DestroyLocStorage</button>
+          </div>
+      </div>
+    </div>
+  <div id="login-modal" class="modal fade bd-example-modal-sm" tabindex=
+    "-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style=
+    "display:none">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="card border-dark">
+          <div class="card-header">Header</div>
             <div class="card-body text-dark">
                 <!-- login form -->
-                <form action="log" method="POST">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <input id="login-submit-reg" type="submit" class=
+              <form action="log" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                    <input name="email" id="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                  <input id="login-submit-reg" type="submit" class=
                     "btn btn-primary"></input>
                   </form>
                 </div>
@@ -106,27 +116,11 @@
           </div>
         </div>
       </div>
-      <!-- UserPanel -->
-      <div class="card text-white bg-dark mb-3 float-left" style="max-width: 18rem;">
-          <div id="avatar-div" class="card-header">
-           
-            <h5 id ="user-name-head" style="color:#f50; text-align:center"></h5>
-          </div>
-        <div class="card-body">
-            <!-- <img class="d-block w-100" src="images/GitImage.jpg">  </img>   -->
-            <div class="list-group">
-                <div class="btn-group-vertical">
-                    <button id="clear-storage" type="button" class=
-                    "btn btn-outline-secondary" style="color:black">ClearLocStorage</button>
-                    <button id="homework" type="button" class=
-                    "btn btn-outline-secondary" style=
-                    "color:#f50" >Homework</button>
-                    <button id="test" type="" class=
-                    "btn btn-outline-secondary" >logg-test</button>
-                  </div>
-            </div>
-        </div>
-      </div>
+  <div class="footer fixed-bottom bg-dark" style="height:50px">
+    <a class="fixed-center" href="http:\localstorage\index.html" style="border-radius:10px">HydroGash inc.</a>
+  </div>
+      
+    <script type="text/javascript" src="FontEditions.js"></script>
     <script type="text/javascript" src="loggin.js"></script>
     <script type="text/javascript" src="onload.js"></script>
     <script type="text/javascript" src="Registration.js"></script>

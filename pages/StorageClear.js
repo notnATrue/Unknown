@@ -1,7 +1,7 @@
 //import { request } from "http";
 
 //import { request } from "https";
-
+loadImg();
 let CookieFabric = function(callback){
     var obj = {};
     var Coookies = document.cookie.split('; ');
@@ -21,7 +21,13 @@ let clearBtn = document.querySelector('#clear-storage');
     console.log(localStorage.length);
 });
 
-
+function tools(){
+    var but = document.querySelector('#SecondPage');
+    but.addEventListener('click', 
+    function(){
+        location.href = 'http://localhost:3000/tools.html';
+    }); 
+};
 // var btn = document.querySelector('#homework');
 //     btn.addEventListener('click', 
 //     fetch('hw/task4.js')
@@ -32,16 +38,7 @@ let clearBtn = document.querySelector('#clear-storage');
 //         }));
 
 
-// function loadImg(e) {
-//     document.body.appendChild(e);
-//    x();
-//    var x = (e) => {
-//        this.e = e;
-//        return e;
-//        };
-//    document.body.appendChild(x);
 
-// };
 
 
 
